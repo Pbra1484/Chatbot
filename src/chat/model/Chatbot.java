@@ -3,9 +3,10 @@ package chat.model;
 import java.util.ArrayList;
 
 /**
- * Base version of the 2015 Chatbot class. Only stub methods are provided.
- * Students will complete methods as part * of the project. * @author Cody
- * Henrichsen * @version 1.0 10/14/15
+ * Base version of the 2016 Chatbot class. Only stub methods are provided.
+ * Students will complete methods as part * of the project. 
+ * * @author Patrick Brashear
+ *  * @version 1.0 10/14/16
  */
 public class Chatbot
 {
@@ -22,12 +23,26 @@ public class Chatbot
 	{
 		this.memesList = new ArrayList<String>();
 		this.politicalTopicList = new ArrayList<String>();
-		this.userName = "name";
-		this.content = "content";
+		this.userName = new String(userName);
+		this.content = new String("content");
 	}
 
 	private void buildMemesList()
 	{
+		memesList.add("doge");
+		memesList.add("cute animals");
+		memesList.add("grumpy cat");
+		memesList.add("dat boi");
+		memesList.add("willy wonka");
+		memesList.add("harambe");
+		memesList.add("john cena");
+		memesList.add("pawn stars");
+		memesList.add("ken bone");
+		memesList.add("michal phelps");
+		memesList.add("sponge bob");
+		memesList.add("pope");
+		memesList.add("nep");
+		
 	}
 
 	private void buildPoliticalTopicsList()
@@ -90,7 +105,7 @@ public class Chatbot
 	 */
 	public String getUserName()
 	{
-		return null;
+		return userName;
 	}
 
 	/**
@@ -99,7 +114,7 @@ public class Chatbot
 	 */
 	public String getContent()
 	{
-		return null;
+		return content;
 	}
 
 	/**
@@ -117,7 +132,7 @@ public class Chatbot
 	 */
 	public ArrayList<String> getPoliticalTopicList()
 	{
-		return null;
+		return politicalTopicList;
 	}
 
 	/**
