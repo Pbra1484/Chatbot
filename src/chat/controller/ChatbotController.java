@@ -1,4 +1,4 @@
-package controller;
+package chat.controller;
 
 public class ChatbotController
 {
