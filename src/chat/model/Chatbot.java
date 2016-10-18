@@ -21,10 +21,12 @@ public class Chatbot
 	 */
 	public Chatbot(String userName)
 	{
-		memesList = new ArrayList<String>();
+		this.memesList = new ArrayList<String>();
 		this.politicalTopicList = new ArrayList<String>();
 		this.userName = userName;
 		this.content = new String("content");
+		this.buildMemesList();
+		this.buildPoliticalTopicsList();
 	}
 
 	private void buildMemesList()
