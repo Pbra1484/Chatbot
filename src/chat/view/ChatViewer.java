@@ -16,4 +16,10 @@ public class ChatViewer
 		response = JOptionPane.showInputDialog(null, question);
 		return response;
 	}
+	public int collectUserOption(String question)
+	{
+		int response = 0;
+		response = JOptionPane.showConfirmDialog(null, question);
+		return response;
+	}
 }
