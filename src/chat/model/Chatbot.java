@@ -21,9 +21,9 @@ public class Chatbot
 	 */
 	public Chatbot(String userName)
 	{
-		this.memesList = new ArrayList<String>();
+		memesList = new ArrayList<String>();
 		this.politicalTopicList = new ArrayList<String>();
-		this.userName = new String("userName");
+		this.userName = userName;
 		this.content = new String("content");
 	}
 
@@ -43,6 +43,12 @@ public class Chatbot
 		memesList.add("pope");
 		memesList.add("nep");
 		memesList.add("nobodys perfect");
+		memesList.add("meme");
+		memesList.add("botom text");
+		memesList.add("BYOB");
+		memesList.add("everyone should just drop dead");
+		
+		
 		
 	}
 
@@ -104,6 +110,11 @@ public class Chatbot
 	 */
 	public boolean memeChecker(String currentInput)
 	{
+		for(int index = 0; index < 17; index++)
+		{
+			
+		}
+		
 		return false;
 	}
 
