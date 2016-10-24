@@ -27,6 +27,7 @@ public class Chatbot
 		this.content = new String("Science");
 		buildMemesList();
 		buildPoliticalTopicsList();
+		
 	}
 
 	private void buildMemesList()
@@ -139,16 +140,18 @@ public class Chatbot
 	 */
 	public boolean memeChecker(String currentInput)
 	{
-//		for(int index = 0; index < 18; index++)
-//		{
-//			
-//			if(currentInput.equalsIgnoreCase(memesList.get(index)));
-//			{
-//				return true;
-//			}
-//		}
+		boolean hasMeme = false;
 		
-		return false;
+		for(int index = 0; index < memesList.size(); index++)
+		{
+			
+			if(currentInput.equalsIgnoreCase(memesList.get(index)))
+			{
+				hasMeme = true;
+			}
+		}
+		
+		return hasMeme;
 	}
 
 	/**
