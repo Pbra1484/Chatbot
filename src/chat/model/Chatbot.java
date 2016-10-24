@@ -132,10 +132,14 @@ public class Chatbot
 	 */
 	public boolean memeChecker(String currentInput)
 	{
-		for(int index = 0; index < 17; index++)
-		{
-			
-		}
+//		for(int index = 0; index < 18; index++)
+//		{
+//			
+//			if(currentInput.equalsIgnoreCase(memesList.get(index)));
+//			{
+//				return true;
+//			}
+//		}
 		
 		return false;
 	}
