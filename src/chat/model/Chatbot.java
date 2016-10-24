@@ -24,9 +24,9 @@ public class Chatbot
 		this.memesList = new ArrayList<String>();
 		this.politicalTopicList = new ArrayList<String>();
 		this.userName = userName;
-		this.content = new String("content");
-		this.buildMemesList();
-		this.buildPoliticalTopicsList();
+		this.content = new String("Science");
+		buildMemesList();
+		buildPoliticalTopicsList();
 	}
 
 	private void buildMemesList()
@@ -48,7 +48,7 @@ public class Chatbot
 		memesList.add("meme");
 		memesList.add("botom text");
 		memesList.add("BYOB");
-		memesList.add("everyone should just drop dead");
+		memesList.add("should just drop dead");
 		
 		
 		
@@ -56,6 +56,26 @@ public class Chatbot
 
 	private void buildPoliticalTopicsList()
 	{
+		politicalTopicList.add("Democrat");
+		politicalTopicList.add("Republican");
+		politicalTopicList.add("11/8/16");
+		politicalTopicList.add("liberal");
+		politicalTopicList.add("conservative");
+		politicalTopicList.add("Clinton");
+		politicalTopicList.add("Trump");
+		politicalTopicList.add("Kaine");
+		politicalTopicList.add("Pence");
+		politicalTopicList.add("Stein");
+		politicalTopicList.add("Johnson");
+		politicalTopicList.add("election");
+		politicalTopicList.add("Make America Great Again");
+		politicalTopicList.add("Stronger Together");
+		politicalTopicList.add("Democracy");
+		politicalTopicList.add("polls");
+		politicalTopicList.add("Washington");
+		politicalTopicList.add("debates");
+		
+		
 	}
 
 	/**
