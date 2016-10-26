@@ -1,10 +1,21 @@
 package chat.view;
 
 import javax.swing.JOptionPane;
+import javax.swing.ImageIcon;
 
-public class ChatViewer
+public class ChatView 
 {
-
+	private String windowMessage;
+	private ImageIcon chatIcon;
+	
+	public ChatView()
+	{
+		windowMessage = "This is a message";
+		chatIcon =  new ImageIcon(getClass().getResource("images/icon.png"));
+	}
+	
+	
+	
 	public void displayMessage(String message)
 	{
 		JOptionPane.showMessageDialog(null, message);
@@ -22,4 +33,5 @@ public class ChatViewer
 		response = JOptionPane.showConfirmDialog(null, question);
 		return response;
 	}
+
 }
