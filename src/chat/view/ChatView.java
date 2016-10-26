@@ -18,13 +18,13 @@ public class ChatView
 	
 	public void displayMessage(String message)
 	{
-		JOptionPane.showMessageDialog(null, message);
+		JOptionPane.showMessageDialog(null, message, windowMessage, JOptionPane.PLAIN_MESSAGE, chatIcon);
 	}
 	
 	public String collectResponse(String question)
 	{
 		String response = "";
-		response = JOptionPane.showInputDialog(null, question,  windowMessage, JoptionPane.INFORMATION_MESSAGE, chatIcon, null,"Type here please" ).toString();
+		response = JOptionPane.showInputDialog(null, question,  windowMessage, JOptionPane.INFORMATION_MESSAGE, chatIcon, null,"Type here please").toString();
 		return response;
 	}
 	public int collectUserOption(String question)

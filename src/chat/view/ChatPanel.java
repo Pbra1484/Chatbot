@@ -1,5 +1,8 @@
 package chat.view;
 
-public class ChatPanel {
+
+
+public class ChatPanel
+{
 
 }

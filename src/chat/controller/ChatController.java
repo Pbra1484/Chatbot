@@ -1,18 +1,18 @@
 package chat.controller;
 
 import chat.model.Chatbot;
-import chat.view.ChatViewer;
+import chat.view.ChatView;
 
 
 public class ChatController
 {
 	private Chatbot stupidBot;
-	private ChatViewer chatView;
+	private ChatView chatView;
 	
 	public ChatController()
 	{
 		stupidBot = new Chatbot("yep");
-		chatView = new ChatViewer();
+		chatView = new ChatView();
 	}
 	
 	
