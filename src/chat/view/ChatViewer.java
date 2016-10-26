@@ -16,7 +16,7 @@ public class ChatViewer
 
 	public void displayMessage(String message)
 	{
-		JOptionPane.showMessageDialog(null, message);
+		JOptionPane.showMessageDialog(null, message, windowMessage, JOptionPane.PLAIN_MESSAGE, chatIcon);
 	}
 	
 	public String collectResponse(String question)
