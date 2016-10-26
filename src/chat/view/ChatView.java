@@ -24,7 +24,7 @@ public class ChatView
 	public String collectResponse(String question)
 	{
 		String response = "";
-		response = JOptionPane.showInputDialog(null, question);
+		response = JOptionPane.showInputDialog(null, question,  windowMessage, JoptionPane.INFORMATION_MESSAGE, chatIcon, null,"Type here please" ).toString();
 		return response;
 	}
 	public int collectUserOption(String question)
