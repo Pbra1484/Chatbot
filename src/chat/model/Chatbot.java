@@ -74,9 +74,8 @@ public class Chatbot
 		politicalTopicList.add("Democracy");
 		politicalTopicList.add("polls");
 		politicalTopicList.add("Washington");
-		politicalTopicList.add("debates");
-		
-		
+		politicalTopicList.add("Hillary");
+				
 	}
 
 	/**
@@ -108,7 +107,7 @@ public class Chatbot
 	{
 		boolean hasContent = false;
 		
-		if(currentInput.contains(content))
+		if(currentInput.toLowerCase().contains(content.toLowerCase()))
 		{
 			hasContent = true;
 		}
@@ -127,7 +126,17 @@ public class Chatbot
 	 */
 	public boolean politicalTopicChecker(String currentInput)
 	{
-		return false;
+		boolean hasPolitics = false;
+		
+		for(int index = 0; index < politicalTopicList.size(); index++)
+		{
+			if(currentInput.equals(politicalTopicList.get(index)))
+			{
+				hasPolitics = true;
+			}
+		}
+		
+		return hasPolitics;
 	}
 
 	/**
@@ -200,4 +209,15 @@ public class Chatbot
 		this.content = content;
 	}
 
+	public boolean keyboardMashChecker(String currentInput)
+	{
+		boolean keyboardMash = false;
+		
+		if(currentInput.equals("sdf")){keyboardMash = true;}
+		if(currentInput.equals("dfg")){keyboardMash = true;}
+		if(currentInput.equals("cvb")){keyboardMash = true;}
+		if(currentInput.equals(",./")){keyboardMash = true;}
+		
+		return keyboardMash;
+	}
 }
