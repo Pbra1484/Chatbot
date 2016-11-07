@@ -8,11 +8,13 @@ public class ChatController
 {
 	private Chatbot stupidBot;
 	private ChatViewer chatView;
+	private ChatFrame appFrame;
 	
 	public ChatController()
 	{
 		stupidBot = new Chatbot("yep");
 		chatView = new ChatViewer();
+		this.appFrame = new ChatFrame(this);
 	}
 	
 	
@@ -48,5 +50,6 @@ public class ChatController
 		
 		return answer;
 	}
+
 
 }
