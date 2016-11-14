@@ -2,7 +2,7 @@ package chat.controller;
 
 import chat.model.Chatbot;
 import chat.view.ChatViewer;
-
+import chat.view.ChatFrame;
 
 public class ChatController
 {
@@ -20,14 +20,14 @@ public class ChatController
 	
 	public void start()
 	{
-		String response = "Hello";
-		
-		while(stupidBot.lengthChecker(response))
-		{
-			chatView.displayMessage(useChatbotCheckers(response));
-			response = chatView.collectResponse("What to talk about today?");
-			
-		}
+//		String response = "Hello";
+//		
+//		while(stupidBot.lengthChecker(response))
+//		{
+//			chatView.displayMessage(useChatbotCheckers(response));
+//			response = chatView.collectResponse("What to talk about today?");
+//			
+//		}
 		
 	}
 	

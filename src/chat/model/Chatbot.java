@@ -248,31 +248,8 @@ public class Chatbot
 		if(currentInput.equals("<B>  </B>")){hasHTML = true;}
 		if(currentInput.equals("<I> sdadas </i>")){hasHTML = true;}
 		if(currentInput.equals("<P>")){hasHTML = true;}
-		if(currentInput.equals("<A HREF=\"sdfs.html\">")){
-		
-		return hasHTML;
+		if(currentInput.equals("<A HREF=\"sdfs.html\">")){return hasHTML;}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 }
