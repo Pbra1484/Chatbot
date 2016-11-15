@@ -24,12 +24,20 @@ public class ChatPanel extends JPanel
 		chatField = new JTextField(25);
 		chatButton = new JButton("Chat with the bot");
 		tempButton = new JButton("temp");
-	
+		
+		setupChatDisplay();
 		setupPanel();
 		setupLayout();
 		setupListeners();
 	}
 	
+	private void setupChatDisplay()
+	{
+		chatDisplay.setEditable(false);
+		chatDisplay.setEnabled(false);;
+		chatDisplay.setLineWrap(true);
+		chatDisplay.setWrapStyleWord(true);
+	}
 	private void setupPanel()
 	{
 		this.setLayout(baseLayout);
