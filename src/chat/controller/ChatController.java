@@ -31,7 +31,7 @@ public class ChatController
 		
 	}
 	
-	private String useChatbotCheckers(String input)
+	public String useChatbotCheckers(String input)
 	{
 		String answer = "";
 		
@@ -43,7 +43,7 @@ public class ChatController
 		{
 			answer += "\nMemes\n";
 		}
-		if(answer.length() == 0)
+		if(!stupidBot.lengthChecker(answer))
 		{
 			answer += "Sorry, I don't understand " + input;
 		}
