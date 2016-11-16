@@ -2,34 +2,36 @@ package chat.controller;
 
 import chat.model.Chatbot;
 import chat.view.ChatViewer;
-
+import chat.view.ChatFrame;
 
 public class ChatController
 {
 	private Chatbot stupidBot;
 	private ChatViewer chatView;
+	private ChatFrame appFrame;
 	
 	public ChatController()
 	{
 		stupidBot = new Chatbot("yep");
 		chatView = new ChatViewer();
+		this.appFrame = new ChatFrame(this);
 	}
 	
 	
 	public void start()
 	{
-		String response = "Hello";
-		
-		while(stupidBot.lengthChecker(response))
-		{
-			chatView.displayMessage(useChatbotCheckers(response));
-			response = chatView.collectResponse("What to talk about today?");
-			
-		}
+//		String response = "Hello";
+//		
+//		while(stupidBot.lengthChecker(response))
+//		{
+//			chatView.displayMessage(useChatbotCheckers(response));
+//			response = chatView.collectResponse("What to talk about today?");
+//			
+//		}
 		
 	}
 	
-	private String useChatbotCheckers(String input)
+	public String useChatbotCheckers(String input)
 	{
 		String answer = "";
 		
@@ -41,12 +43,13 @@ public class ChatController
 		{
 			answer += "\nMemes\n";
 		}
-		if(answer.length() == 0)
+		if(!stupidBot.lengthChecker(answer))
 		{
 			answer += "Sorry, I don't understand " + input;
 		}
 		
 		return answer;
 	}
+
 
 }

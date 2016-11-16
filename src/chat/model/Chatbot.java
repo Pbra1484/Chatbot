@@ -208,7 +208,12 @@ public class Chatbot
 	{
 		this.content = content;
 	}
-
+	
+	/**
+	 * * Checks if keyboard mashing is inputed.
+	 * @param currentInput
+	 * @return boolean keyboardMash
+	 */
 	public boolean keyboardMashChecker(String currentInput)
 	{
 		boolean keyboardMash = false;
@@ -220,4 +225,31 @@ public class Chatbot
 		
 		return keyboardMash;
 	}
+	
+	/**
+	 * * Checks if quit was inputed.
+	 * @param currentInput
+	 * @return boolean didQuit
+	 */
+	public boolean quitChecker(String currentInput)
+	{
+		boolean didQuit = false;
+		
+		if(currentInput.equals("quit")){didQuit = true;}
+		
+		return didQuit;
+	}
+
+	
+	public boolean inputHTMLChecker(String currentInput)
+	{
+		boolean hasHTML = false;
+		
+		if(currentInput.equals("<B>  </B>")){hasHTML = true;}
+		if(currentInput.equals("<I> sdadas </i>")){hasHTML = true;}
+		if(currentInput.equals("<P>")){hasHTML = true;}
+		if(currentInput.equals("<A HREF=\"sdfs.html\">")){return hasHTML;}
+	}
+	
+	
 }
