@@ -245,10 +245,61 @@ public class Chatbot
 	{
 		boolean hasHTML = false;
 		
-		if(currentInput.equals("<B>  </B>")){hasHTML = true;}
-		if(currentInput.equals("<I> sdadas </i>")){hasHTML = true;}
-		if(currentInput.equals("<P>")){hasHTML = true;}
-		if(currentInput.equals("<A HREF=\"sdfs.html\">")){return hasHTML;}
+		
+		
+		if(currentInput.contains("<B>"))
+		{
+			int index = currentInput.indexOf("<B>") + 3;
+			String sub = currentInput.substring(index);
+			
+			if(sub.contains("</B>"))
+			{
+				hasHTML = true;
+			}
+			
+		}
+		else if(currentInput.contains("<I>"))
+		{
+			int index = currentInput.indexOf("<I>") + 3;
+			String sub = currentInput.substring(index);
+			
+			if(sub.contains("</i>"))
+			{
+				hasHTML = true;
+			}
+		}
+		else if(currentInput.contains("<P>"))
+		{
+			hasHTML = true;
+		}
+		else if(currentInput.contains("<A HREF=\""))
+		{
+			int index = currentInput.indexOf("<A HREF=\"") + 9;
+			String sub = currentInput.substring(index);
+			
+			if(sub.contains("\">"))
+			{
+				int index2 = sub.indexOf("\">");
+				String sub2 = sub.substring(index2);
+				
+				if(sub2.contains(" </a>"))
+				{
+					hasHTML = true;
+				}
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
+//		if(currentInput.equals("<B>  </B>")){hasHTML = true;}
+//		if(currentInput.equals("<I> sdadas </i>")){hasHTML = true;}
+//		if(currentInput.equals("<P>")){hasHTML = true;}
+//		if(currentInput.equals("<A HREF=\"sdfs.html\">")){hasHTML = false;}
+		return hasHTML;
 	}
 	
 	

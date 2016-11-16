@@ -68,7 +68,7 @@ public class ChatPanel extends JPanel
 				String userWords = chatField.getText();
 				String botResponse = baseController.useChatbotCheckers(userWords);
 				
-				chatDisplay.setText("You said: " + userWords +"\n" + "Chatbot said: " + botResponse);
+				chatDisplay.setText("You: " + userWords +"\n" + "Chatbot: " + botResponse);
 				chatField.setText("");
 			}
 		});
