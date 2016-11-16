@@ -240,7 +240,6 @@ public class Chatbot
 		return didQuit;
 	}
 
-	
 	public boolean inputHTMLChecker(String currentInput)
 	{
 		boolean hasHTML = false;
