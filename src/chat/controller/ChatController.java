@@ -48,8 +48,54 @@ public class ChatController
 			answer += "Sorry, I don't understand " + input;
 		}
 		
+		int canBeRandom = (int) (Math.random() * 7);
+		if(canBeRandom % 2 == 0)
+		{
+			answer += randomTopicGeneration();
+		}
+		
 		return answer;
 	}
-
+	
+	private String randomTopicGeneration()
+	{
+		String randomTopic = "";
+		int random = (int) (Math.random() * 7);
+		
+		switch(random)
+		{
+			case 0:
+				randomTopic = "Random topic 1";
+				break;
+			case 1:
+				randomTopic = "Random topic 2";
+				break;
+			case 2:
+				randomTopic = "Random topic 3";
+				break;
+			case 3:
+				randomTopic = "Random topic 4";
+				break;
+			case 4:
+				randomTopic = "Random topic 5";
+				break;
+			case 5:
+				randomTopic = "Random topic 6";
+				break;
+			case 6:
+				randomTopic = "Random topic 7";
+				break;
+				
+			default:
+				randomTopic = "Error";
+		}
+		
+		
+		
+		
+		return randomTopic;
+	}
+	
+	
 
 }
