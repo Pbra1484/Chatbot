@@ -301,17 +301,30 @@ public class Chatbot
 		return hasHTML;
 	}
 	
-	public boolean twiterChecker(String currentInput)
+	public boolean twitterChecker(String currentInput)
 	{
-		boolean hasTwiter = false;
+		boolean hasTwitter = false;
 		if(currentInput.contains("#"))
 		{
 			int index = currentInput.indexOf("#") + 1;
 			String sub = currentInput.substring(index, index + 1);
 			
-			if(sub.equals(" ") && sub.equals(""))
+			if(!sub.equals(" ") && !sub.equals(""))
+			{
+				hasTwitter = true;
+			}
 		}
-		return hasTwiter;
+		if(currentInput.contains("@"))
+		{
+			int index = currentInput.indexOf("#") + 1;
+			String sub = currentInput.substring(index, index + 1);
+			
+			if(!sub.equals(" ") && !sub.equals(""))
+			{
+				hasTwitter = true;
+			}
+		}
+		return hasTwitter;
 	}
 	
 }
