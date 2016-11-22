@@ -34,24 +34,40 @@ public class ChatController
 	public String useChatbotCheckers(String input)
 	{
 		String answer = "";
-		
-		if(stupidBot.contentChecker(input))
+		if(!stupidBot.quitChecker(input))
 		{
-			answer += "\nSpecal Secret\n";
+			if(stupidBot.contentChecker(input))
+			{
+				answer += "\nSpecal Secret\n";
+			}
+			if(stupidBot.memeChecker(input))
+			{
+				answer += "\nMemes\n";
+			}
+			if(!stupidBot.lengthChecker(answer))
+			{
+				answer += "Sorry, I don't understand " + input;
+			}
+			if(stupidBot.politicalTopicChecker(input))
+			{
+				answer += "\nPolitics\n";
+			}
+			if(stupidBot.twitterChecker(input))
+			{
+				answer += "\nTwiter\n";
+			}
+			
+			int canBeRandom = (int) (Math.random() * 7);
+			if(canBeRandom % 2 == 0)
+			{
+				answer += randomTopicGeneration();
+			}
 		}
-		if(stupidBot.memeChecker(input))
+		else
 		{
-			answer += "\nMemes\n";
-		}
-		if(!stupidBot.lengthChecker(answer))
-		{
-			answer += "Sorry, I don't understand " + input;
-		}
-		
-		int canBeRandom = (int) (Math.random() * 7);
-		if(canBeRandom % 2 == 0)
-		{
-			answer += randomTopicGeneration();
+			chatView.displayMessage("Ending chat");
+			System.exit(0);
+			
 		}
 		
 		return answer;
