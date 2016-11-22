@@ -244,33 +244,10 @@ public class Chatbot
 	{
 		boolean hasHTML = false;
 		
-		
-		
-		if(currentInput.contains("<B>"))
-		{
-			int index = currentInput.indexOf("<B>") + 3;
-			String sub = currentInput.substring(index);
-			
-			if(sub.contains("</B>"))
-			{
-				hasHTML = true;
-			}
-			
-		}
-		else if(currentInput.contains("<I>"))
-		{
-			int index = currentInput.indexOf("<I>") + 3;
-			String sub = currentInput.substring(index);
-			
-			if(sub.contains("</i>"))
-			{
-				hasHTML = true;
-			}
-		}
-		else if(currentInput.contains("<P>"))
+		if(currentInput.contains("<P>"))
 		{
 			hasHTML = true;
-		}
+		}	
 		else if(currentInput.contains("<A HREF=\""))
 		{
 			int index = currentInput.indexOf("<A HREF=\"") + 9;
@@ -287,9 +264,38 @@ public class Chatbot
 				}
 			}
 		}
+		else if(currentInput.contains("<"))
+		{
+			String lower = currentInput.toLowerCase();
+			int openIndex1 = lower.indexOf("<") + 1;
+			String tag = "";
+			if(lower.contains(">"))
+			{
+				int openIndex2 = lower.indexOf(">");
+				tag = lower.substring(openIndex1, openIndex2);
+				
+				String sub = lower.substring(openIndex2 + 1);
+				
+				if(sub.contains("</" + tag + ">"))
+				{
+					hasHTML = true;
+				}	
+			}			
+		}
+
+
 		
 		
-		
+//		else if(currentInput.contains("<I>"))
+//		{
+//			int index = currentInput.indexOf("<I>") + 3;
+//			String sub = currentInput.substring(index);
+//			
+//			if(sub.contains("</i>"))
+//			{
+//				hasHTML = true;
+//			}
+//		}
 		
 		
 		
