@@ -9,6 +9,11 @@ public class ChatFrame extends JFrame
 	private ChatController baseController;
 	private ChatPanel appPanel;
 	
+	
+	/**
+	 * Initializes the controller and panel then calls the helper method setupFrame
+	 * @param baseController
+	 */
 	public ChatFrame(ChatController baseController)
 	{
 		super();
@@ -18,6 +23,9 @@ public class ChatFrame extends JFrame
 		this.setupFrame();
 	}
 	
+	/**
+	 * Sets up the conditions of the frame
+	 */
 	private void setupFrame()
 	{
 		this.setContentPane(appPanel);
