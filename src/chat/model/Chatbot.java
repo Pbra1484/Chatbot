@@ -31,7 +31,7 @@ public class Chatbot
 	}
 
 	/**
-	 * Builds the list of memes
+	 * * Builds the list of memes
 	 */
 	private void buildMemesList()
 	{
@@ -59,7 +59,7 @@ public class Chatbot
 	}
 
 	/**
-	 * Builds the list of political topics
+	 * * Builds the list of political topics
 	 */
 	private void buildPoliticalTopicsList()
 	{
@@ -247,7 +247,7 @@ public class Chatbot
 	}
 
 	/**
-	 * Checks if the input was HTML code
+	 * * Checks if the input was HTML code
 	 * @param currentInput
 	 * @return boolean hasHTML
 	 */
@@ -319,7 +319,7 @@ public class Chatbot
 	}
 	
 	/**
-	 * Checks if the input has a twitter tag or user id
+	 * * Checks if the input has a twitter tag or user id
 	 * @param currentInput
 	 * @return boolean hasTwitter
 	 */
