@@ -10,7 +10,9 @@ public class ChatController
 	private ChatViewer chatView;
 	private ChatFrame appFrame;
 	
-	
+	/**
+	 * Constructs the chatbot chatview and appframe object
+	 */
 	public ChatController()
 	{
 		stupidBot = new Chatbot("yep");
@@ -18,7 +20,9 @@ public class ChatController
 		this.appFrame = new ChatFrame(this);
 	}
 	
-	
+	/**
+	 * Does nothing currently
+	 */
 	public void start()
 	{
 //		String response = "Hello";
@@ -32,6 +36,11 @@ public class ChatController
 		
 	}
 	
+	/**
+	 * Uses all the checker methods in Chatbot.java
+	 * @param input
+	 * @return String answer
+	 */
 	public String useChatbotCheckers(String input)
 	{
 		String answer = "";
@@ -74,6 +83,10 @@ public class ChatController
 		return answer;
 	}
 	
+	/**
+	 * Picks a random topic
+	 * @return String randomTopic
+	 */
 	private String randomTopicGeneration()
 	{
 		String randomTopic = "";
