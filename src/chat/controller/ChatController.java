@@ -10,6 +10,7 @@ public class ChatController
 	private ChatViewer chatView;
 	private ChatFrame appFrame;
 	
+	
 	public ChatController()
 	{
 		stupidBot = new Chatbot("yep");
