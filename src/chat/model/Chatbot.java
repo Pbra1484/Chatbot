@@ -30,6 +30,9 @@ public class Chatbot
 		
 	}
 
+	/**
+	 * Builds the list of memes
+	 */
 	private void buildMemesList()
 	{
 		memesList.add("doge");
@@ -55,6 +58,9 @@ public class Chatbot
 		
 	}
 
+	/**
+	 * Builds the list of political topics
+	 */
 	private void buildPoliticalTopicsList()
 	{
 		politicalTopicList.add("Democrat");
@@ -240,6 +246,11 @@ public class Chatbot
 		return didQuit;
 	}
 
+	/**
+	 * Checks if the input was HTML code
+	 * @param currentInput
+	 * @return boolean hasHTML
+	 */
 	public boolean inputHTMLChecker(String currentInput)
 	{
 		boolean hasHTML = false;
@@ -307,6 +318,11 @@ public class Chatbot
 		return hasHTML;
 	}
 	
+	/**
+	 * Checks if the input has a twitter tag or user id
+	 * @param currentInput
+	 * @return boolean hasTwitter
+	 */
 	public boolean twitterChecker(String currentInput)
 	{
 		boolean hasTwitter = false;
