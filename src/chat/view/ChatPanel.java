@@ -36,12 +36,11 @@ public class ChatPanel extends JPanel
 		searchTwitter = new JButton("Search Twitter");
 		sendTweet = new JButton("Send Tweet");
 		save = new JButton("Save");
-		baseLayout.putConstraint(SpringLayout.SOUTH, chatField, -22, SpringLayout.NORTH, save);
 		load = new JButton("Load");
-		baseLayout.putConstraint(SpringLayout.EAST, chatField, 0, SpringLayout.EAST, load);
-		chatPane = new JScrollPane(5, 25);
-		baseLayout.putConstraint(SpringLayout.NORTH, chatPane, 0, SpringLayout.NORTH, this);
-		baseLayout.putConstraint(SpringLayout.WEST, chatPane, 73, SpringLayout.WEST, this);
+		chatPane = new JScrollPane();
+		baseLayout.putConstraint(SpringLayout.NORTH, chatPane, 20, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, chatPane, -180, SpringLayout.SOUTH, this);
+		
 		
 		setupChatDisplay();
 		setupPanel();
@@ -96,6 +95,10 @@ public class ChatPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.EAST, save, 0, SpringLayout.EAST, searchTwitter);
 		baseLayout.putConstraint(SpringLayout.NORTH, load, 0, SpringLayout.NORTH, save);
 		baseLayout.putConstraint(SpringLayout.WEST, load, 0, SpringLayout.WEST, sendTweet);
+		baseLayout.putConstraint(SpringLayout.SOUTH, chatField, -22, SpringLayout.NORTH, save);
+		baseLayout.putConstraint(SpringLayout.EAST, chatField, 0, SpringLayout.EAST, load);
+		baseLayout.putConstraint(SpringLayout.WEST, chatPane, 73, SpringLayout.WEST, this);
+		
 		
 		
 	}

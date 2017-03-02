@@ -30,7 +30,7 @@ public class ChatFrame extends JFrame
 	{
 		this.setContentPane(appPanel);
 		this.setTitle("yep");
-		this.setSize(new Dimension(600, 400));
+		this.setSize(new Dimension(450, 300));
 		this.setLocationRelativeTo(null);
 		this.setVisible(true);
 	}
