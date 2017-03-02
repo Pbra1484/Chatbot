@@ -120,10 +120,14 @@ public class ChatController
 				randomTopic = "Error";
 		}
 		
-		
-		
-		
 		return randomTopic;
+	}
+	
+	
+	public void handleErrors(Exception exception)
+	{
+		chatView.displayMessage("An error has occurred");
+		chatView.displayMessage(exception.getMessage());
 	}
 	
 	
