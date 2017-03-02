@@ -38,8 +38,6 @@ public class ChatPanel extends JPanel
 		save = new JButton("Save");
 		load = new JButton("Load");
 		chatPane = new JScrollPane();
-		baseLayout.putConstraint(SpringLayout.NORTH, chatPane, 20, SpringLayout.NORTH, this);
-		baseLayout.putConstraint(SpringLayout.SOUTH, chatPane, -180, SpringLayout.SOUTH, this);
 		
 		
 		setupChatDisplay();
@@ -98,6 +96,8 @@ public class ChatPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.SOUTH, chatField, -22, SpringLayout.NORTH, save);
 		baseLayout.putConstraint(SpringLayout.EAST, chatField, 0, SpringLayout.EAST, load);
 		baseLayout.putConstraint(SpringLayout.WEST, chatPane, 73, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, chatPane, 20, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, chatPane, -180, SpringLayout.SOUTH, this);
 		
 		
 		
