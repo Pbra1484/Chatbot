@@ -19,7 +19,9 @@ public class FileController
 			}
 			else
 			{
-				String saveName = "Default";
+				String saveName = "Chats at";
+				saveName += LocalDateTime.now().getDayOfWeek().name();
+				saveName += LocalDateTime.now().getHour() + "-" + LocalDateTime.now().getMinute();
 				saveFile = new File(saveName+".txt");
 			}
 			FileWriter saveFileWriter = new FileWriter(saveFile);

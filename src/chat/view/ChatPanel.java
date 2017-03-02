@@ -40,6 +40,8 @@ public class ChatPanel extends JPanel
 		load = new JButton("Load");
 		baseLayout.putConstraint(SpringLayout.EAST, chatField, 0, SpringLayout.EAST, load);
 		chatPane = new JScrollPane(5, 25);
+		baseLayout.putConstraint(SpringLayout.NORTH, chatPane, 0, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, chatPane, 73, SpringLayout.WEST, this);
 		
 		setupChatDisplay();
 		setupPanel();
@@ -147,7 +149,9 @@ public class ChatPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				
+				String fileName = chatField.getText() + ".txt";
+				String saved = FileController.readFile(baseController, fileName);
+				chatDisplay.setText(saved);
 			}
 		});
 	}
