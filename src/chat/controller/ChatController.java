@@ -130,6 +130,10 @@ public class ChatController
 		chatView.displayMessage(exception.getMessage());
 	}
 	
+	public ChatViewer getPopup()
+	{
+		return chatView;
+	}
 	
 
 }
