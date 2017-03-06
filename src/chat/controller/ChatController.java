@@ -3,12 +3,14 @@ package chat.controller;
 import chat.model.Chatbot;
 import chat.view.ChatViewer;
 import chat.view.ChatFrame;
+import chat.model.CTECTwitter;
 
 public class ChatController
 {
 	private Chatbot stupidBot;
 	private ChatViewer chatView;
 	private ChatFrame appFrame;
+	private CTECTwitter tweetBot;
 	
 	/**
 	 * Constructs the chatbot chatview and appframe object
@@ -18,6 +20,7 @@ public class ChatController
 		stupidBot = new Chatbot("yep");
 		chatView = new ChatViewer();
 		this.appFrame = new ChatFrame(this);
+		tweetBot = new CTECTwitter(this);
 	}
 	
 	/**
@@ -135,5 +138,9 @@ public class ChatController
 		return chatView;
 	}
 	
+	public void useTwitter(String text)
+	{
+		tweetBot.sendTweet(text);
+	}
 
 }
