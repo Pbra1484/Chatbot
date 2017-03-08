@@ -12,16 +12,16 @@ public class CTECTwitter
 {
 	private ChatController baseController;
 	private Twitter twitterBot;
-	private List<Status> searchedTweets;
-	private List<String> ignoredWords;
+	private ArrayList<Status> allTheTweets;
+	private ArrayList<String> tweetedWords;
 	
 	
 	public CTECTwitter(ChatController baseController)
 	{
 		this.baseController = baseController;
 		twitterBot = TwitterFactory.getSingleton();
-		ignoredWords = new ArrayList<String>();
-		searchedTweets = new ArrayList<Status>();
+		tweetedWords = new ArrayList<String>();
+		allTheTweets = new ArrayList<Status>();
 	}
 	
 	public void sendTweet(String textToTweet)
