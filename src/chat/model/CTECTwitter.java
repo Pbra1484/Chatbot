@@ -8,6 +8,7 @@ import twitter4j.Status;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Scanner;
+import twitter4j.Paging;
 
 public class CTECTwitter 
 {
@@ -67,12 +68,33 @@ public class CTECTwitter
 		return boringWords;
 	}
 	
-	private String getMostCommonWord()
+	public String getMostCommonWord()
 	{
 		removeBoringWords();
 		removeBlankWords();
 		
 		return null;
+	}
+	
+	private void gatherTheTweets(String user)
+	{
+		tweetedWords.clear();
+		allTheTweets.clear();
+		int pageCount = 1;
+		Paging statusPage = new Paging(1, 200);
+		
+		while(pageCount <= 10)
+		{
+			try 
+			{
+				allTheTweets.addAll(twitterBot.getUserTimeline(user, statusPage));
+			} 
+			catch (TwitterException twitterError) 
+			{
+				baseController.handleErrors(twitterError);
+			}
+			pageCount++;
+		}
 	}
 	
 	public void removeBoringWords()
