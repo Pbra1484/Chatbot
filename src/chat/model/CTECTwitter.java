@@ -40,13 +40,46 @@ public class CTECTwitter
 		}
 	}
 	
-	private void createIgnoredWordList()
+	private String [] createIgnoredWordsArray()
 	{
-		
+		return null;
 	}
 	
 	private String getMostCommonWord()
 	{
+		removeBoringWords();
+		removeBlankWords();
+		
 		return null;
+	}
+	
+	public void removeBoringWords()
+	{
+		String [] boringWords = createIgnoredWordsArray();
+		
+		 for(int index = 0; index < tweetedWords.size(); index++)
+		 {
+			 for(int boringIndex = 0; boringIndex < boringWords.length; boringIndex++)
+			 {
+				 if(tweetedWords.get(index).equalsIgnoreCase(boringWords[boringIndex]))
+				 {
+					 tweetedWords.remove(index);
+					 index--;
+					 boringIndex = boringWords.length;
+				 }
+			 }
+		 }
+	}
+	
+	private void removeBlankWords()
+	{
+		for(int index = 0; index < tweetedWords.size(); index++)
+		{
+			if(tweetedWords.get(index).trim().equals(""))
+			{
+				tweetedWords.remove(index);
+				index--;
+			}
+		}
 	}
 }
