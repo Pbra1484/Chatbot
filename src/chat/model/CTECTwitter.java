@@ -50,6 +50,7 @@ public class CTECTwitter
 		Scanner boringWordScanner = new Scanner(this.getClass().getResourceAsStream("commonWords.txt"));
 		while(boringWordScanner.hasNextLine())
 		{
+			boringWordScanner.nextLine();
 			wordCount++;
 		}
 		
@@ -68,12 +69,29 @@ public class CTECTwitter
 		return boringWords;
 	}
 	
-	public String getMostCommonWord()
+	public String getMostCommonWord(String username)
 	{
+		gatherTheTweets(username);
+		turnTweetsToWords();
 		removeBoringWords();
 		removeBlankWords();
 		
-		return null;
+		String information = "The tweetcount is " + allTheTweets.size() + " and the word count after removal is " + tweetedWords.size() + calculateTopWord();
+		
+		return information;
+	}
+	
+	private void turnTweetsToWords()
+	{
+		for(Status currentTweet : allTheTweets)
+		{
+			String tweetText = currentTweet.getText();
+			String [] tweetWords = tweetText.split(" ");
+			for(String word : tweetWords)
+			{
+				tweetedWords.add(word);
+			}
+		}
 	}
 	
 	private void gatherTheTweets(String user)
@@ -126,4 +144,37 @@ public class CTECTwitter
 			}
 		}
 	}
+
+	private String calculateTopWord()
+	{
+		String results = "";
+		String topWord = "";
+		int mostPopularIndex = 0;
+		int popularCount = 0;
+		
+		for(int index = 0; index < tweetedWords.size(); index++)
+		{
+			int currentPopularity = 0;
+			for(int searched = index + 1; searched < tweetedWords.size(); searched++)
+			{
+				if(tweetedWords.get(index).equalsIgnoreCase(tweetedWords.get(searched)))
+				{
+					currentPopularity++;
+				}
+			}
+			if(currentPopularity > popularCount)
+			{
+				popularCount = currentPopularity;
+				mostPopularIndex = index;
+				topWord = tweetedWords.get(mostPopularIndex);
+			}
+			currentPopularity = 0;
+		}
+		results += " the most pulular word was " + topWord + ", and it occured " + popularCount +" times." + "\n";
+		results += "Thats a percetage of " + ((double)popularCount)/tweetedWords.size() * 100 + "%";
+		
+		return results;
+	}
+
+
 }
