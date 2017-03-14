@@ -8,7 +8,11 @@ import twitter4j.Status;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import twitter4j.GeoLocation;
 import twitter4j.Paging;
+import twitter4j.Query;
+import twitter4j.QueryResult;
 
 public class CTECTwitter 
 {
@@ -175,6 +179,64 @@ public class CTECTwitter
 		
 		return results;
 	}
+	
+	private String removePunctuation(String currentString)
+	{
+		String punctuation = ".,':;\"(){}[]<>-";
+		
+		String scrubbedString = "";
+		for(int i = 0; i < currentString.length(); i++)
+		{
+			if(punctuation.indexOf(currentString.charAt(i)) == -1)
+			{
+				scrubbedString += currentString.charAt(i);
+			}
+		}
+		return scrubbedString;
 
+	}
 
+	public String interigateTwitter()
+	{
+		String info = "";
+		Query query = new Query("CCHS");
+		query.setCount(100);
+		query.setGeoCode(new GeoLocation(40.5196, 111.8702), 5, Query.KILOMETERS);
+		query.setSince("2017-03-14");
+		try
+		{
+			QueryResult result = twitterBot.search(query);
+			info += "Count: " + result.getTweets().size()  + "\n";
+			for(Status tweet : result.getTweets())
+			{
+				info += "@" + tweet.getUser().getName() + ": " + tweet.getText() + "\n";
+			}
+		}
+		catch(TwitterException error)
+		{
+			baseController.handleErrors(error);
+		}
+		return info;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
