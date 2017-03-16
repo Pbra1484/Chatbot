@@ -201,8 +201,8 @@ public class CTECTwitter
 		String info = "";
 		Query query = new Query("CCHS");
 		query.setCount(100);
-		query.setGeoCode(new GeoLocation(40.5196, 111.8702), 5, Query.KILOMETERS);
-		query.setSince("2017-03-14");
+		query.setGeoCode(new GeoLocation(40.5196, -111.8702), 500, Query.KILOMETERS);
+		query.setSince("2017-03-10");
 		try
 		{
 			QueryResult result = twitterBot.search(query);
